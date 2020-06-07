@@ -1,9 +1,5 @@
 package br.ce.wcaquino.tasksfrontend.model;
 
-import java.time.LocalDate;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -11,8 +7,7 @@ public class Todo {
 
 	private Long id;
 	private String task;
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private LocalDate dueDate;
+	private String dueDate;
 	
 	public Long getId() {
 		return id;
@@ -30,11 +25,11 @@ public class Todo {
 		this.task = task;
 	}
 	
-	public LocalDate getDueDate() {
+	public String getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(LocalDate dueDate) {
+	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
 

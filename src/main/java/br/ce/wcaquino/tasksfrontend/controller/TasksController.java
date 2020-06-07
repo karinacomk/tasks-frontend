@@ -48,6 +48,7 @@ public class TasksController {
 	public String save(Todo todo, Model model) {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
+			
 			restTemplate.postForObject(
 					getBackendURL() + "/tasks-backend/todo", todo, Object.class);			
 			model.addAttribute("success", "Success!");
